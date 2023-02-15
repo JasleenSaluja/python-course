@@ -4,7 +4,7 @@ speed(0)
 fillcolor('yellow')
 pencolor('green')
 pensize=3
-side=6
+side=3
 
 pu()
 goto(-150,200)
