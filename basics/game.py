@@ -10,7 +10,9 @@ test_font = pygame.font.Font('font/Pixeltype.ttf',50) #(font_type,font_size1)
 
 sky_surface = pygame.image.load('graphics/sky.png').convert() #create a regular surface with an img
 ground_surface = pygame.image.load('graphics/ground.png').convert()
-text_surface =test_font.render('My game',False,'Black')  #(text,AA,color) AA-Anti_Aliasing
+
+score_surface =test_font.render('My game',False,'Black')  #(text,AA,color) AA-Anti_Aliasing
+score_rect = score_surface.get_rect(center=(400,50))
 
 snail_surface = pygame.image.load('graphics/snail/snail1.png').convert_alpha()
 snail_rect = snail_surface.get_rect(midbottom=(600,300))
@@ -23,12 +25,15 @@ while True:  #to hold the display window
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()  #to exit the infinite loop or display window
-        if event.type ==pygame.MOUSEBUTTONDOWN:
-            print('mouse down')
+        #if event.type ==pygame.MOUSEMOTION:
+           #if player_rect.collidepoint(event.pos):
+            #   print('collision') 
 
     screen.blit(sky_surface,(0,0)) #put one surfecon another
     screen.blit(ground_surface,(0,300))
-    screen.blit(text_surface,(300,50))
+    pygame.draw.rect(screen,'Pink',score_rect)
+    pygame.draw.rect(screen,'Pink',score_rect,10)
+    screen.blit(score_surface,score_rect)
 
     snail_rect.x -=4
     if snail_rect.right<=0:
