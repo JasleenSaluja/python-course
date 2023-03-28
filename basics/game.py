@@ -139,7 +139,7 @@ start_time=0
 score=0
 
 bg_music=pygame.mixer.Sound('audio/music.wav')
-bg_music.play(loops=-1)#-1 to play the sound forever
+bg_music.play(loops=-1)#-1 to play the sound forever`   q1`
 
 player=pygame.sprite.GroupSingle()
 player.add(Player())
