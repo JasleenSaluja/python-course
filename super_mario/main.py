@@ -13,11 +13,11 @@ class Main:
 
         self.editor=Editor()
     
-    #cursor
-    surf=load('digipodium/super_mario/graphics/cursor/mouse.png').convert_alpha()
-    cursor=pygame.cursors.Cursor((0,0),surf)
-    pygame.mouse.set_cursor(cursor)
-    
+        #cursor
+        surf=load('super_mario/graphics/cursor/mouse.png').convert_alpha()
+        cursor=pygame.cursors.Cursor((0,0),surf)
+        pygame.mouse.set_cursor(cursor)
+        
     def run(self):
         while True:
             dt=self.clock.tick()/1000
